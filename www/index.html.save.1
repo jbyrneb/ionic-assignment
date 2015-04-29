@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="calorific">
+
+    <ion-pane>
+      <ion-header-bar class="bar-calm">
+        <h1 class="title">Calorific</h1>	
+      </ion-header-bar>
+      <ion-content>
+	
+	<div>
+	 <center>
+	   <h3>Calories</h3>
+           <h2>
+             <div id="MyLife">
+                0
+             </div>
+           </h2>
+        </center>
+        </div>
+
+	
+	<div class="card">
+	  <div class="item item-image">
+   	    <img src="http://upload.wikimedia.org/wikipedia/commons/7/71/Anadama_bread_(1).jpg">
+	  </div>
+	</div>
+
+	<div>
+         <center>
+            <a class="button button-energized" onclick="incDec('-92')">
+             -92
+            </a>
+
+            <a class="button button-positive" onclick="incDec('+92')">
+             +92
+            </a>
+         </center>
+        </div>
+
+        <div class="card">
+          <div class="item item-image">
+            <img src="http://upload.wikimedia.org/wikipedia/commons/7/71/Anadama_bread_(1).jpg">
+          </div>
+        </div>
+
+        <div>
+         <center>
+            <a class="button button-energized" onclick="incDec('-92')">
+             -92
+            </a>
+
+            <a class="button button-positive" onclick="incDec('+92')">
+             +92
+            </a>
+         </center>
+        </div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+     <div class="tabs">
+  	<a class="tab-item">
+    	  Home
+  	</a>
+  	<a class="tab-item">
+    	  Favorites
+  	</a>
+  	<a class="tab-item">
+    	  Settings
+  	</a>
+     </div>
+    </ion-content>
+    </ion-pane>
+
+      <script type="text/javascript">
+	function incDec(plusMinus) {
+     	  var plusMinus = parseInt(plusMinus);
+   	  var currentLife = parseInt(document.getElementById("MyLife").innerHTML) + plusMinus;
+   	  document.getElementById("MyLife").innerHTML = currentLife;	
+	}
+      </script>
+
+  </body>
+</html>
