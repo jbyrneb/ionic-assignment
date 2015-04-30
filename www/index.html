@@ -54,13 +54,13 @@
 &nbsp;&nbsp;
 	   <h3>Calories</h3>
            <h2>
-<!--Calls the js function incDec with the id MyLife which is a starting number
+<!--Calls the js function incDec with the id MyCal which is a starting number
 that is manipulated by the js code to be incremented and decremented by
 a number within the incDec() patrenteses and contain either - or + 
 to show if value is incremented or decremented. 
  -->
 
-             <div id="MyLife">
+             <div id="MyCal">
                 0
              </div>
            </h2>
@@ -164,7 +164,7 @@ to show if value is incremented or decremented.
         <br/><br/>
         <div>
         <center>
-<!--Uses reset function to set the MyLife tag back to 0 -->
+<!--Uses reset function to set the MyCal tag back to 0 -->
 
            <a class="button button-assertive" onclick="reset()">
              Reset
@@ -177,19 +177,22 @@ to show if value is incremented or decremented.
     </ion-content>
     </ion-pane>
 <!--Js function which makes the functionality of the page possible -->
+<!--Code given by lecture for dice app and adapted-->
 
       <script type="text/javascript">
 	function incDec(plusMinus) {
      	  var plusMinus = parseInt(plusMinus);
-   	  var currentLife = parseInt(document.getElementById("MyLife").innerHTML) + plusMinus;
-   	  document.getElementById("MyLife").innerHTML = currentLife;	
+   	  var currentLife = parseInt(document.getElementById("MyCal").innerHTML) + plusMinus;
+	  document.getElementById("MyCal").innerHTML = currentLife;
 	}
 
 <!--Sets MyLife to 0 -->
        function reset() {
-         document.getElementById("MyLife").innerHTML = 0;
+         document.getElementById("MyCal").innerHTML = 0;
        }
+
       </script>
+
 
   </body>
 </html>
