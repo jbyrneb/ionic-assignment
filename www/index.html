@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>My Calorie Counter</title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -24,12 +24,14 @@
 
   <body ng-app="calorific">
 <ion-pane>
-      <ion-header-bar class="bar-calm">
+      <ion-header-bar class="bar-balanced">
         <h1 class="title">Calorific</h1>
       </ion-header-bar>
 
-<div class="tabs-striped tabs-top tabs-background-calm tabs-color-light">
+<!--Tabs for each section -->
+<div class="tabs-striped tabs-top tabs-background-balanced tabs-color-light">
     <div class="tabs">
+<!--Brackfast tab is active -->
       <a class="tab-item active" href="index.html">
         Breakfast
       </a>
@@ -42,7 +44,7 @@
     </div>
   </div>
 
-
+<!--For space betwwenthe header and the calories label-->
 &nbsp;&nbsp;
       <ion-content>
 &nbsp;&nbsp;
@@ -52,6 +54,12 @@
 &nbsp;&nbsp;
 	   <h3>Calories</h3>
            <h2>
+<!--Calls the js function incDec with the id MyLife which is a starting number
+that is manipulated by the js code to be incremented and decremented by
+a number within the incDec() patrenteses and contain either - or + 
+to show if value is incremented or decremented. 
+ -->
+
              <div id="MyLife">
                 0
              </div>
@@ -59,6 +67,9 @@
         </center>
         </div>
 	
+<!--Main section of page -->
+<!--The card class contains an image -->
+
 	<div class="card">
 	  <div class="item item-image">
    	    <img src="http://www.meandmydiabetes.com/wp-content/uploads/2011/08/toast.jpg">
@@ -68,7 +79,9 @@
 	<div>
          <center>
 	<h3>Toast</h3>
-            <a class="button button-positive" onclick="incDec('+87')">
+<!--The button implements the incDec function-->
+
+            <a class="button button-dark" onclick="incDec('+87')">
              +87
             </a>
          </center>
@@ -83,7 +96,7 @@
         <div>
          <center>
 	<h3>Corn Flakes and Milk</h3>
-            <a class="button button-positive" onclick="incDec('+138')">
+            <a class="button button-dark" onclick="incDec('+138')">
              +138
             </a>
          </center>
@@ -98,7 +111,7 @@
         <div>
          <center>
         <h3>Coco Pops and Milk</h3>
-            <a class="button button-positive" onclick="incDec('+172')">
+            <a class="button button-dark" onclick="incDec('+172')">
              +172
             </a>
          </center>
@@ -112,7 +125,7 @@
         <div>
          <center>
         <h3>Two Rashers</h3>
-            <a class="button button-positive" onclick="incDec('+107')">
+            <a class="button button-dark" onclick="incDec('+107')">
              +107
             </a>
          </center>
@@ -126,7 +139,7 @@
         <div>
          <center>
         <h3>Two Sausages</h3>
-            <a class="button button-positive" onclick="incDec('+168')">
+            <a class="button button-dark" onclick="incDec('+168')">
              +168
             </a>
          </center>
@@ -140,7 +153,7 @@
         <div>
          <center>
         <h3>Two Eggs </h3>
-            <a class="button button-positive" onclick="incDec('+225')">
+            <a class="button button-dark" onclick="incDec('+225')">
              +225
             </a>
          </center>
@@ -151,6 +164,8 @@
         <br/><br/>
         <div>
         <center>
+<!--Uses reset function to set the MyLife tag back to 0 -->
+
            <a class="button button-assertive" onclick="reset()">
              Reset
            </a>
@@ -161,6 +176,7 @@
 
     </ion-content>
     </ion-pane>
+<!--Js function which makes the functionality of the page possible -->
 
       <script type="text/javascript">
 	function incDec(plusMinus) {
@@ -169,7 +185,7 @@
    	  document.getElementById("MyLife").innerHTML = currentLife;	
 	}
 
-
+<!--Sets MyLife to 0 -->
        function reset() {
          document.getElementById("MyLife").innerHTML = 0;
        }

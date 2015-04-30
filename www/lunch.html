@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>My Calorie Counter</title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -25,15 +25,18 @@
   <body ng-app="calorific">
 
   <ion-pane>
-      <ion-header-bar class="bar-calm">
+      <ion-header-bar class="bar-balanced">
         <h1 class="title">Calorific</h1>
       </ion-header-bar>
 
-<div class="tabs-striped tabs-top tabs-background-calm tabs-color-light">
+<!--Tabs for each section -->
+<div class="tabs-striped tabs-top tabs-background-balanced tabs-color-light">
     <div class="tabs">
+
       <a class="tab-item" href="index.html">
         Breakfast
       </a>
+<!--Lunch tab is active -->
       <a class="tab-item active" href="lunch.html">
         Lunch
       </a>
@@ -43,6 +46,7 @@
     </div>
   </div>
 
+<!--For space betwwenthe header and the calories label-->
 &nbsp;&nbsp;
       <ion-content>
 &nbsp;&nbsp;
@@ -53,12 +57,20 @@
 
 	   <h3>Calories</h3>
            <h2>
+<!--Calls the js function incDec with the id MyLife which is a starting number
+that is manipulated by the js code to be incremented and decremented by
+a number within the incDec() patrenteses and contain either - or +
+to show if value is incremented or decremented.
+ -->
+
              <div id="MyLife">
                 0
              </div>
            </h2>
         </center>
         </div>
+<!--Main section of page -->
+<!--The card class contains an image -->
 	
 	<div class="card">
 	  <div class="item item-image">
@@ -69,7 +81,8 @@
 	<div>
          <center>
 	<h3>Ham Sandwich</h3>
-            <a class="button button-positive" onclick="incDec('+350')">
+<!--The button implements the incDec function-->
+            <a class="button button-dark" onclick="incDec('+350')">
              +350
             </a>
          </center>
@@ -83,7 +96,7 @@
         <div>
          <center>
 	<h3>Tuna Fish Sandwich</h3>
-            <a class="button button-positive" onclick="incDec('+452')">
+            <a class="button button-dark" onclick="incDec('+452')">
              +452
             </a>
          </center>
@@ -98,7 +111,7 @@
         <div>
          <center>
         <h3>Vegetable Soup</h3>
-            <a class="button button-positive" onclick="incDec('+257')">
+            <a class="button button-dark" onclick="incDec('+257')">
              +257
             </a>
          </center>
@@ -112,7 +125,7 @@
         <div>
          <center>
         <h3>Ceasar Salad</h3>
-            <a class="button button-positive" onclick="incDec('+372')">
+            <a class="button button-dark" onclick="incDec('+372')">
              +372
             </a>
          </center>
@@ -126,7 +139,7 @@
         <div>
          <center>
         <h3>Pot Noodles</h3>
-            <a class="button button-positive" onclick="incDec('+147')">
+            <a class="button button-dark" onclick="incDec('+147')">
              +147
             </a>
          </center>
@@ -140,7 +153,7 @@
         <div>
          <center>
         <h3>Crackers and Hummus</h3>
-            <a class="button button-positive" onclick="incDec('+170')">
+            <a class="button button-dark" onclick="incDec('+170')">
              +170
             </a>
          </center>
@@ -153,6 +166,8 @@
         <br/><br/>
         <div>
         <center>
+<!--Uses reset function to set the MyLife tag back to 0 -->
+
            <a class="button button-assertive" onclick="reset()">
              Reset
            </a>
@@ -163,6 +178,7 @@
 
     </ion-content>
     </ion-pane>
+<!--Js function which makes the functionality of the page possible -->
 
       <script type="text/javascript">
 	function incDec(plusMinus) {
@@ -171,7 +187,7 @@
    	  document.getElementById("MyLife").innerHTML = currentLife;	
 	}
 
-
+<!--Sets MyLife to 0 -->
        function reset() {
          document.getElementById("MyLife").innerHTML = 0;
        }

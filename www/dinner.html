@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>My Calorie Counter</title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -29,6 +29,7 @@
         <h1 class="title">Calorific</h1>
       </ion-header-bar>
 
+<!--Tabs for each section -->
 <div class="tabs-striped tabs-top tabs-background-balanced tabs-color-light">
     <div class="tabs">
       <a class="tab-item" href="index.html">
@@ -37,12 +38,13 @@
       <a class="tab-item" href="lunch.html">
         Lunch
       </a>
+<!--Dinner tab is active -->
       <a class="tab-item active" href="dinner.html">
         Dinner
       </a>
     </div>
   </div>
-
+<!--For space betwwenthe header and the calories label-->
 &nbsp;&nbsp;
       <ion-content>
 &nbsp;&nbsp;
@@ -53,12 +55,20 @@
 
 	   <h3>Calories</h3>
            <h2>
+<!--Calls the js function incDec with the id MyLife which is a starting number
+that is manipulated by the js code to be incremented and decremented by
+a number within the incDec() patrenteses and contain either - or +
+to show if value is incremented or decremented.
+ -->
              <div id="MyLife">
                 0
              </div>
            </h2>
         </center>
         </div>
+
+<!--Main section of page -->
+<!--The card class contains an image -->
 	
 	<div class="card">
 	  <div class="item item-image">
@@ -69,7 +79,9 @@
 	<div>
          <center>
 	<h3>Spaghetti Bolognese</h3>
-            <a class="button button-positive" onclick="incDec('+350')">
+<!--The button implements the incDec function-->
+
+            <a class="button button-dark" onclick="incDec('+350')">
              +350
             </a>
          </center>
@@ -83,7 +95,7 @@
         <div>
          <center>
 	<h3>Roast Beef</h3>
-            <a class="button button-positive" onclick="incDec('+565')">
+            <a class="button button-dark" onclick="incDec('+565')">
              +565
             </a>
          </center>
@@ -97,7 +109,7 @@
         <div>
          <center>
         <h3>Lasagne</h3>
-            <a class="button button-positive" onclick="incDec('+198')">
+            <a class="button button-dark" onclick="incDec('+198')">
              +198
             </a>
          </center>
@@ -111,7 +123,7 @@
         <div>
          <center>
         <h3>Salmon Fillet Meal</h3>
-            <a class="button button-positive" onclick="incDec('+286')">
+            <a class="button button-dark" onclick="incDec('+286')">
              +286
             </a>
          </center>
@@ -125,7 +137,7 @@
         <div>
          <center>
         <h3>Chicken Curry</h3>
-            <a class="button button-positive" onclick="incDec('+516')">
+            <a class="button button-dark" onclick="incDec('+516')">
              +516
             </a>
          </center>
@@ -139,7 +151,7 @@
         <div>
          <center>
         <h3>Burger and Chips</h3>
-            <a class="button button-positive" onclick="incDec('+629')">
+            <a class="button button-dark" onclick="incDec('+629')">
              +629
             </a>
          </center>
@@ -151,6 +163,8 @@
         <br/><br/>
         <div>
         <center>
+<!--Uses reset function to set the MyLife tag back to 0 -->
+
            <a class="button button-assertive" onclick="reset()">
              Reset
            </a>
@@ -161,6 +175,7 @@
 
     </ion-content>
     </ion-pane>
+<!--Js function which makes the functionality of the page possible -->
 
       <script type="text/javascript">
 	function incDec(plusMinus) {
@@ -169,7 +184,7 @@
    	  document.getElementById("MyLife").innerHTML = currentLife;	
 	}
 
-
+<!--Sets MyLife to 0 -->
        function reset() {
          document.getElementById("MyLife").innerHTML = 0;
        }
